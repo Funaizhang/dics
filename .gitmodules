@@ -1,0 +1,3 @@
+[submodule "anime-face-detector"]
+	path = anime-face-detector
+	url = git@github.com:couver-v/anime-face-detector.git

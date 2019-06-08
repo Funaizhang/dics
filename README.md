@@ -1,5 +1,34 @@
 # DICS - Deep Image-to-Comic Synthesis
 
+## Usage
+
+1. Scraping Manga
+
+List of compatible mangas can be found on this [page](https://ww1.animecruzers.io/read-manga/)
+
+```
+python MangaScraper.py "https://ww4.readonepiece.com/chapter/one-piece-digital-colored-comics-chapter-001/" "path/to/output"
+```
+
+2. Export landmarks
+
+Follow instruction from 1 to 3 of this [README](https://github.com/couver-v/anime-face-detector/blob/master/README.md) to setup the project
+
+Then run:
+```
+python anime-face-detector/main.py -i path/to/dir -o path/to/landmarks.json -model path/to/model.ckpt -conf 0.1
+```
+
+3. Crop faces
+
+```
+python crop_faces.py --landmarks=path/to/landmarks.json --input=path/to/input/dir --output=path/to/output --ratio=1.2 --min-size=64 --conf=0.1
+```
+
+## Main sites
+* [Deeppomf's anime papers](https://github.com/deeppomf/DeepLearningAnimePapers)
+* [Overleaf](https://www.overleaf.com/project/5cca6bb602327479035358ae)
+
 ## Main papers
 * [MUNIT](https://github.com/NVlabs/MUNIT)
 * [StyleGAN](https://github.com/NVlabs/stylegan)
