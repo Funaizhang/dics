@@ -1,3 +1,6 @@
 [submodule "anime-face-detector"]
 	path = anime-face-detector
 	url = git@github.com:couver-v/anime-face-detector.git
+[submodule "MUNIT"]
+	path = MUNIT
+	url = git@github.com:couver-v/MUNIT.git
