@@ -9,12 +9,13 @@ class MangaScraper():
 
     def __init__(self, data_dir, begin, end):
         self.data_dir = data_dir
+        self.begin = begin
         self.urls = ['https://www.thiswaifudoesnotexist.net/example-{}.jpg'.format(x) for x in range(begin, end + 1)]
         if not os.path.exists(self.data_dir):
             os.mkdir(self.data_dir)
 
     def crawl_url(self, url, i):
-        fn = '{}/{}.png'.format(self.data_dir, i)
+        fn = os.path.join(self.data_dir, '{}.png'.format(i))
         try:
             user_agent = 'Mozilla/5.0'
             headers = {'User-Agent': user_agent }
@@ -23,6 +24,7 @@ class MangaScraper():
             openurl = urllib.request.urlopen(request)
             content = openurl.read()
             with open(fn, 'wb') as f:
+                print(fn)
                 f.write(content)
 
         except (HTTPError, URLError):
@@ -30,7 +32,7 @@ class MangaScraper():
 
     def run(self):
         for i, url in enumerate(self.urls):
-            self.crawl_url(url, i)
+            self.crawl_url(url, i + self.begin)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -40,6 +42,6 @@ if __name__ == "__main__":
     parser.add_argument('--end', type=int, help='end image number')
     parser.add_argument('--data-dir', help='data directory')
     args = parser.parse_args()
-
+    print(args.begin)
     crawer = MangaScraper(args.data_dir, args.begin, args.end)
     crawer.run()
