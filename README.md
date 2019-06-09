@@ -28,8 +28,8 @@ python crop_faces.py --landmarks=path/to/landmarks.json --input=path/to/input/di
 ```
 
 ### Download datasets
-- [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html): [Google Drive](https://drive.google.com/open?id=0B7EVK8r0v71pWEZsZE9oNnFzTm8)
-- One Piece Face: [Google Drive](https://drive.google.com/open?id=1HHicP1ZgcL0VeuZA41P57R4ag_KKAX-B)
+- [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) -> [Google Drive](https://drive.google.com/open?id=0B7EVK8r0v71pWEZsZE9oNnFzTm8)
+- One Piece Faces -> [Google Drive](https://drive.google.com/open?id=1HHicP1ZgcL0VeuZA41P57R4ag_KKAX-B)
 
 ```
 python download_datasets.py -output path/to/output
