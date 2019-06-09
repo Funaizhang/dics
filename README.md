@@ -2,6 +2,8 @@
 
 ## Usage
 
+### Create your own manga dataset
+
 1. Scraping Manga
 
 List of compatible mangas can be found on this [page](https://ww1.animecruzers.io/read-manga/)
@@ -23,6 +25,21 @@ python anime-face-detector/main.py -i path/to/dir -o path/to/landmarks.json -mod
 
 ```
 python crop_faces.py --landmarks=path/to/landmarks.json --input=path/to/input/dir --output=path/to/output --ratio=1.2 --min-size=64 --conf=0.1
+```
+
+### Download datasets
+- [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html): [Google Drive](https://drive.google.com/open?id=0B7EVK8r0v71pWEZsZE9oNnFzTm8)
+- One Piece Face: [Google Drive](https://drive.google.com/open?id=1HHicP1ZgcL0VeuZA41P57R4ag_KKAX-B)
+
+```
+python download_datasets.py -output path/to/output
+```
+
+### Format dataset for MUNIT
+
+for each dataset run:
+```
+prepare_data.py -input path/to/dir -output path/to/output -name dataset_name
 ```
 
 ## Main sites
